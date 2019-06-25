@@ -1,0 +1,41 @@
+<h3 class="customersColor">Customer Form</h3>
+<h4 class="customersColor">Reactive Form</h4>
+
+<div class="card bg-light">
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="customerName">Name</label>
+        <input formControlName="name" type="text" class="form-control" id="customerName" name="customerName">
+        <div class="alert alert-danger" *ngIf="name.touched && name.invalid">
+          <div *ngIf="name.errors.required">Name is required.</div>
+          <div *ngIf="name.errors.minlength">Name should contain at least 3 characters</div>
+          <div *ngIf="name.errors.cannotContainSpace">Name cannot contain space character(s).</div>
+        </div>
+      </div>
+      <div formGroupName="contact">
+        <div class="form-group">
+          <label for="customerPhone">Phone</label>
+          <input formControlName="phone" type="text" class="form-control" id="customerPhone" name="customerPhone">
+          <div class="alert alert-danger" *ngIf="phone.touched && phone.invalid">
+            Phone is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="customerEmail">Email</label>
+          <input formControlName="email" type="text" class="form-control" id="customerEmail" name="customerEmail">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="customerCity">City</label>
+        <input formControlName="city" type="text" class="form-control" id="customerCity" name="customerCity">
+      </div>
+      <button [disabled]="form.invalid" name="save" type="submit" class="btn btn-success">
+        Save
+      </button>
+    </form>
+  </div>
+</div>
+<div class="alert alert-success" *ngIf="showMessage">
+  Customer saved successfully!
+</div>

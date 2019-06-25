@@ -1,0 +1,23 @@
+<!-- interpolation -->
+<div>
+  Name: {{ productName }}
+</div>
+<br>
+<!-- property binding -->
+<div>
+  <input type="text" class="form-control" [(ngModel)]="productName">
+</div>
+<br>
+<!-- event binding - no event object -->
+<div>
+  <button class="btn btn-success" (click)="onSave()">Save</button>
+</div>
+<br>
+<!-- event binding - with event object -->
+<div>
+  <input type="text" class="form-control" (input)="onSearch($event)" placeholder="Enter Search Text">
+</div>
+<br>
+<div>
+  {{ productName }} is the latest flagship device from Samsung.
+</div>
