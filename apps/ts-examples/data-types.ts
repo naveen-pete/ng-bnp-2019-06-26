@@ -8,6 +8,8 @@ var a: number;
 a = 10;
 console.log('a =', a);
 
+a = 'hi';
+
 a = 200;
 console.log('a =', a);
 
@@ -18,7 +20,7 @@ console.log('b =', b);
 b = 'Hi';
 console.log('b =', b);
 
-const c: string = "Constant string, cannot be changed.";
+let c: string = "Constant string, cannot be changed.";
 console.log('c =', c);
 
 c = "abc";

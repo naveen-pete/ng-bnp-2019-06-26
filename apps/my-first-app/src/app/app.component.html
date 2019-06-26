@@ -1,0 +1,16 @@
+<h1>Welcome</h1>
+
+Product Name: {{ productName }}
+<br>
+Product Price: {{ productPrice }}
+
+<br>
+<input type="text" [(ngModel)]="productName">
+
+<br>
+<br>
+<button (click)="onSave()">Save</button>
+
+<br>
+<br>
+{{ productName }} - This is the latest product from Samsung

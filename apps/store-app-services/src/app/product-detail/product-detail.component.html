@@ -8,7 +8,7 @@
     {{ product.name | uppercase }}</h4> -->
   <div class="card-body">
     <p class="card-text" appHighlight color="lightblue">{{ product.description }}</p>
-    <p class="card-text"><strong>Price:</strong> <em>{{ product.price | currency : 'INR' : 'symbol' }}</em></p>
+    <p class="card-text"><strong>Price:</strong> <em>{{ product.price | currency  }}</em></p>
     <p class="card-text"><strong>Available?</strong>
       <!-- ngClass directive -->
       <em class="badge"
