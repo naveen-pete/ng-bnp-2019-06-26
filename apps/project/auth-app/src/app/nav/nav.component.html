@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="nav nav-pills">
+      <li class="nav-item" *ngIf="!authService.isAuthenticated()">
+        <a class="nav-link" routerLink="/" routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAuthenticated()">
+        <span class="m-3">
+          Welcome {{ authService.getUserName() | titlecase }}!
+          <button class="btn btn-success btn-sm m-2" (click)="onLogout()">Logout</button>
+        </span>
+      </li>
+    </ul>
+    <hr>
+  </div>
+</div>
